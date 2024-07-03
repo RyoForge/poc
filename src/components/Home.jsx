@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
 import Footer from './Footer';
 import Header from './Header';
 import ProgramCard from './ProgramCard';
@@ -12,13 +15,19 @@ import img6 from '../assets/images/engineering.jpg';
 import img7 from '../assets/images/health.jpg';
 
 const Home = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
+
   return (
     <>
       <Header />
       <main className="flex flex-col items-center">
         {/* Hero Section */}
-        <section className="relative w-full h-[80vh] md:h-[70vh] bg-gradient-to-r from-purple-800 via-teal-500 to-green-500 text-white flex flex-col md:flex-row transform transition-transform duration-700 ease-in-out">
-          <div className="flex flex-1 flex-col justify-center p-10 md:p-20 space-y-5 animate-slide-in">
+        <section className="relative w-full h-[80vh] md:h-[70vh] bg-gradient-to-r from-purple-800 via-teal-500 to-green-500 text-white flex flex-col md:flex-row transform transition-transform duration-700 ease-in-out" data-aos="fade-up">
+          <div className="flex flex-1 flex-col justify-center p-10 md:p-20 space-y-5">
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
               GreenField University
             </h1>
@@ -45,7 +54,7 @@ const Home = () => {
         </section>
 
         {/* About Section */}
-        <section className="w-full py-16 bg-white text-center">
+        <section className="w-full py-16 bg-white text-center" data-aos="fade-up">
           <h2 className="text-3xl font-bold">About Our College</h2>
           <p className="mt-4 text-lg max-w-2xl mx-auto">
             Welcome to [Your College Name], where innovation meets tradition. Our commitment to excellence in education is unwavering, ensuring that every student is prepared for the future.
@@ -56,7 +65,7 @@ const Home = () => {
         </section>
 
         {/* Programs Section */}
-        <section className="w-full py-16 bg-gray-100 text-center">
+        <section className="w-full py-16 bg-gray-100 text-center" data-aos="fade-up">
           <h2 className="text-3xl font-bold">Explore Our Academic Offerings</h2>
           <p className="mt-4 text-lg max-w-2xl mx-auto">
             Explore a variety of programs designed to meet your educational needs.
@@ -89,7 +98,7 @@ const Home = () => {
         </section>
 
         {/* News & Events Section */}
-        <section className="w-full py-16 bg-white text-center">
+        <section className="w-full py-16 bg-white text-center" data-aos="fade-up">
           <h2 className="text-3xl font-bold mb-8">Stay Updated</h2>
           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
@@ -126,7 +135,7 @@ const Home = () => {
 
         {/* Testimonials Section */}
         <TestimonialSection>
-          <section className="w-full py-16 bg-gray-100 text-center">
+          <section className="w-full py-16 bg-gray-100 text-center" data-aos="fade-up">
             <h2 className="text-3xl font-bold">Hear From Our Students</h2>
             <p className="mt-4 text-lg max-w-2xl mx-auto">
               Student Testimonial Carousel Here
@@ -135,7 +144,7 @@ const Home = () => {
         </TestimonialSection>
 
         {/* Statistics Section */}
-        <section className="w-full py-16 bg-gray-200 text-center">
+        <section className="w-full py-16 bg-gray-200 text-center" data-aos="fade-up">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">By the Numbers</h2>
             <div className="grid grid-cols-2 gap-8">
@@ -160,7 +169,7 @@ const Home = () => {
         </section>
 
         {/* Gallery Section */}
-        <section className="w-full py-16 bg-gray-100 text-center">
+        <section className="w-full py-16 bg-gray-100 text-center" data-aos="fade-up">
           <h2 className="text-3xl font-bold mb-8">Our Campus in Pictures</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="relative group">
@@ -185,7 +194,7 @@ const Home = () => {
         </section>
 
         {/* Contact Section */}
-        <section className="w-full py-16 bg-white text-center">
+        <section className="w-full py-16 bg-white text-center" data-aos="fade-up">
           <h2 className="text-3xl font-bold">Get In Touch</h2>
           <p className="mt-4 text-lg max-w-2xl mx-auto">
             Address: 123 College Avenue, City, State, ZIP
