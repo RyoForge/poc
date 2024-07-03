@@ -1,6 +1,16 @@
+import { useEffect } from 'react';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+
 const Footer = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
+
     return (
-      <footer className="bg-slate-800 text-white pt-8 pb-4 px-4">
+      <footer className="bg-slate-800 text-white pt-8 pb-4 px-4" data-aos="fade-in">
         <div className="max-w-7xl mx-auto grid gap-8 md:grid-cols-3">
           {/* Contact Us Section */}
           <div>
