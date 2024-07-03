@@ -1,16 +1,53 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CourseCard from '../components/CourseCard';
 import backgroundImg from '../assets/images/college-background.png';
+import image1 from '../assets/images/engineering.jpg';
+import business from '../assets/images/business.jpg';
+import arts from '../assets/images/arts.jpg';
+import health from '../assets/images/health.jpg';
 
+// Sample courses data with added fields for better demonstration
 const coursesData = [
-  { title: 'Computer Science 101', description: 'Introduction to Computer Science', instructor: 'Dr. Smith', category: 'Science' },
-  { title: 'Business Management', description: 'Fundamentals of Business Management', instructor: 'Prof. Johnson', category: 'Business' },
-  { title: 'Art History', description: 'Exploring Art through the Ages', instructor: 'Dr. Lee', category: 'Arts' },
-  { title: 'Biology 101', description: 'Basics of Biology', instructor: 'Dr. Brown', category: 'Science' },
+  { 
+    title: 'Computer Science', 
+    description: 'Introduction to Computer Science', 
+    instructor: 'Dr. Smith', 
+    category: 'Science',
+    duration: '3 months',
+    price: '$299',
+    image: image1
+  },
+  { 
+    title: 'Business Management', 
+    description: 'Fundamentals of Business Management', 
+    instructor: 'Prof. Johnson', 
+    category: 'Business',
+    duration: '6 months',
+    price: '$399',
+    image: business
+  },
+  { 
+    title: 'Art History', 
+    description: 'Exploring Art through the Ages', 
+    instructor: 'Dr. Lee', 
+    category: 'Arts',
+    duration: '4 months',
+    price: '$249',
+    image: arts
+  },
+  { 
+    title: 'Biology', 
+    description: 'Basics of Biology', 
+    instructor: 'Dr. Brown', 
+    category: 'Science',
+    duration: '3 months',
+    price: '$279',
+    image: health
+  },
 ];
 
 const Courses = () => {
@@ -19,6 +56,15 @@ const Courses = () => {
       duration: 1000,
     });
   }, []);
+
+  // State for search query
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // Filter courses based on the search query
+  const filteredCourses = coursesData.filter(course =>
+    course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    course.category.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <>
@@ -40,23 +86,72 @@ const Courses = () => {
           </div>
         </section>
 
+        {/* Search Bar */}
+        <section id="search" className="w-full py-8 bg-white flex justify-center items-center" data-aos="fade-up">
+          <input
+            type="text"
+            placeholder="Search for courses..."
+            className="p-3 pr-6 pl-6 border rounded-xl shadow-md"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </section>
+
         {/* Course Categories */}
         <section id="courses" className="w-full py-16 bg-gray-100 text-center" data-aos="fade-up">
           <h2 className="text-3xl font-bold">Our Course Offerings</h2>
           <p className="mt-4 text-lg max-w-2xl mx-auto">
             Explore a variety of programs designed to meet your educational needs.
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-8">
-            {coursesData.map((course, index) => (
+          <div className="mt-8 flex flex-wrap justify-center gap-5">
+            {filteredCourses.map((course, index) => (
               <CourseCard
                 key={index}
                 title={course.title}
                 description={course.description}
                 instructor={course.instructor}
                 category={course.category}
+                duration={course.duration}
+                price={course.price}
+                image={course.image}
               />
             ))}
           </div>
+        </section>
+
+        {/* Testimonials */}
+        <section id="testimonials" className="w-full py-16 bg-gray-100 text-center" data-aos="fade-up">
+          <h2 className="text-3xl font-bold">What Our Students Say</h2>
+          <p className="mt-4 text-lg max-w-2xl mx-auto">
+            Hear from those who have experienced our courses and benefited from our education.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-8">
+            <div className="max-w-md bg-white p-6 rounded-lg shadow-md" data-aos="fade-up">
+              <p className="text-lg italic">
+              &quot;The courses provided were extremely comprehensive and well-structured. I learned so much!&quot;
+              </p>
+              <p className="mt-4 font-bold">Jane Doe</p>
+              <p className="text-gray-600">Computer Science Major</p>
+            </div>
+            <div className="max-w-md bg-white p-6 rounded-lg shadow-md" data-aos="fade-up">
+              <p className="text-lg italic">
+              &quot;The instructors were knowledgeable and engaging. The course content was practical and useful.&quot;
+              </p>
+              <p className="mt-4 font-bold">John Smith</p>
+              <p className="text-gray-600">Business Management Student</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Call to Action */}
+        <section className="w-full py-16 text-center text-white bg-orange-600" data-aos="fade-up">
+          <h2s className="text-3xl font-bold">Ready to Start Learning?</h2s>
+          <p className="mt-4 text-lg max-w-2xl mx-auto p-2 pb-8">
+            Join us today and take the first step towards achieving your educational goals.
+          </p>
+          <a href="#courses" className="bg-cta-bg hover:bg-orange-600 text-cta-text py-3 px-6 rounded-full font-bold mt-6">
+            Explore More Courses
+          </a>
         </section>
       </main>
       <Footer />
