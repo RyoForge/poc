@@ -60,7 +60,8 @@ const Header = () => {
           </button>
         )}
       </nav>
-
+      {isMenuOpen && (
+      <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={handleMenuToggle}>
       <div className={`fixed top-0 right-0 w-3/4 md:w-3/4 h-full bg-red-500 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col items-center gap-4 py-4">
           <Link to="/" className="hover:text-blue-700 transition-all text-white">Home</Link>
@@ -73,8 +74,7 @@ const Header = () => {
         </div>
       </div>
 
-      {isMenuOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={handleMenuToggle}></div>
+      </div>
       )}
     </header>
   );

@@ -10,6 +10,7 @@ export default {
         'fade-in-icon': 'fadeInIcon 1s ease-out forwards',
         'float': 'float 3s ease-in-out infinite',
         'floatX': 'floatX 3s ease-in-out infinite',
+        'fade-up': 'fadeUp 1s ease-out forwards',
       },
       keyframes: {
         fadeIn: {
@@ -39,6 +40,27 @@ export default {
           '50%': { transform: 'translateX(-20px)' },
           '100%': { transform: 'translateX(0)' },
         },
+        fadeUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+      colors: {
+        'cta-bg': '#FF7F00',
+        'cta-text': '#FFFFFF',
+        'card-bg': '#FFFFFF',
+        'card-border': '#E2E8F0',
+        'card-shadow': '#CBD5E0',
+      },
+      boxShadow: {
+        'card': '0 4px 6px rgba(0, 0, 0, 0.1)',
+        'card-hover': '0 10px 15px rgba(0, 0, 0, 0.2)',
+      },
+      maxWidth: {
+        'course-card': '20rem',
+      },
+      spacing: {
+        'cta-padding': '3rem',
       },
     },
   },
