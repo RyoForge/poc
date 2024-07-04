@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Logo from '../assets/images/college.png';
+import Logo from '../assets/images/swamiji.png';
 import Toggle from '../assets/icons/menu.png';
 
 const Header = () => {
@@ -37,7 +37,7 @@ const Header = () => {
               <img
                 src={Logo}
                 alt="College Logo"
-                className="h-16"
+                className="h-16 ml-3"
               />
             </Link>
           )}
