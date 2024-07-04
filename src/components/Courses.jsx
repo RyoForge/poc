@@ -18,7 +18,7 @@ const coursesData = [
     instructor: 'Dr. Smith', 
     category: 'Science',
     duration: '3 months',
-    price: '$299',
+    price: '₹29900',
     image: image1
   },
   { 
@@ -27,7 +27,7 @@ const coursesData = [
     instructor: 'Prof. Johnson', 
     category: 'Business',
     duration: '6 months',
-    price: '$399',
+    price: '₹39900',
     image: business
   },
   { 
@@ -36,16 +36,16 @@ const coursesData = [
     instructor: 'Dr. Lee', 
     category: 'Arts',
     duration: '4 months',
-    price: '$249',
+    price: '₹24900',
     image: arts
   },
   { 
     title: 'Biology', 
-    description: 'Basics of Biology', 
+    description: 'Basics of Biology and Health Science', 
     instructor: 'Dr. Brown', 
     category: 'Science',
     duration: '3 months',
-    price: '$279',
+    price: '₹27900',
     image: health
   },
 ];

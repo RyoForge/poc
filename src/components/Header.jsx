@@ -60,7 +60,7 @@ const Header = () => {
         )}
       </nav>
       <div className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={handleMenuToggle}>
-        <div className={`fixed top-0 right-0 w-3/4 md:w-1/4 h-full bg-red-500 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`} onClick={e => e.stopPropagation()}>
+        <div className={`fixed top-0 right-0 w-3/4 md:w-1/4 h-full bg-red-500/70 shadow-lg backdrop-blur-sm transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`} onClick={e => e.stopPropagation()}>
           <div className="flex flex-col items-center gap-4 py-4">
             <Link to="/" className="hover:text-blue-700 transition-all text-white">Home</Link>
             <Link to="/courses" className="hover:text-blue-700 transition-all text-white">Courses</Link>
