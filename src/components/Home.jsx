@@ -34,7 +34,7 @@ const Home = () => {
               Empowering Minds, Shaping Futures
             </h1>
             <p className="text-xl md:text-2xl font-light animate-slide-in-left">
-              Welcome to GreenField University - Your Journey Starts Here
+              Welcome to S V M Arts Science and Commerce College - Your Journey Starts Here
             </p>
             <a href="/apply" className="bg-orange-500 hover:bg-orange-600 text-black py-3 px-6 rounded-full font-bold animate-bounce">
               Apply Now
@@ -60,7 +60,7 @@ const Home = () => {
         <section id="about" className="w-full py-16 bg-white text-center" data-aos="fade-up">
           <h2 className="text-3xl font-bold">About Our College</h2>
           <p className="mt-4 text-lg max-w-2xl mx-auto">
-            Welcome to GreenField University, where innovation meets tradition. Our commitment to excellence in education is unwavering, ensuring that every student is prepared for the future.
+            Welcome to S V M Arts Science and Commerce College, where excellence meets tradition. Our commitment to excellence in education is unwavering, ensuring that every student is prepared for the future.
           </p>
           <a href="/about" className="mt-6 inline-block text-blue-500 hover:text-blue-700">
             Learn More About Us
